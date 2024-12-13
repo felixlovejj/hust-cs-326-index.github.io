@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>休息一下吧</title>
+<style type="text/css">
+a:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+a:active {
+	text-decoration: none;
+	color: #FFFFFF;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<style>
+    body {
+	background-image: url('须弥.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+	<audio id="myAudio" src="we.mp3" "1.mp3" "2.mp3"></audio>
+    <script>
+        var audio = document.getElementById('myAudio');
+        var songs = ['1.mp3', 'we.mp3', '2.mp3'];
+        var currentIndex = 0;
+
+        audio.addEventListener('ended', function () {
+            currentIndex = (currentIndex + 1) % songs.length;
+            audio.src = songs[currentIndex];
+            audio.play();
+        });
+    </script>
+	<button onclick="document.getElementById('myAudio').play()">播放</button>
+<button onclick="document.getElementById('myAudio').pause()">暂停</button>
+<button onclick="playNextSong()">下一首</button>
+<p>&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px;">&nbsp;</p>
+	<p style="font-family: '楷体'; font-size: 30px; text-align: right; color: #FFFFFF;"><a href="../index.html">返回首页</a></p>
+</body>	
+</html>

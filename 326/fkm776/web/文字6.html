@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>第六页</title>
+<style type="text/css">
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+    <h1>六</h1>
+<p style="font-family: '楷体'; font-size: 30px;">23.01.07</p>
+    <p style="font-family: '楷体'; font-size: 30px;">亲爱的哥哥：<br>
+    喜乐平安，展信悦<br>
+    我近来过得很好哦，不知道你在那边和望君姐姐怎么样了，或者说我应该叫她嫂子了（笑）<br>
+    不知不觉我也大三了呢，第一个学期都结束了<br>
+    前两天手机摔坏了，老是会误触，自己跳到小胡的拨号界面，我有点怀疑是不是你在催我找他表白了…烦死…虽然我的确很喜欢他咯，但我得矜持一点，阿兰她们也喊我矜持点，我就感觉你一直在催，上个月我已经和一家公司签合同了，15号发工资，到时候买条利群给你，让你抽个够，哼<br>
+    你放心吧，老狗和温州人一直护着我的，没有人敢欺负我<br>
+    还有小胡这个混蛋，我看他能装多久，就这样熬吧，总之我是不会先出手的，我反正是不信先下手为强<br>
+    不说了，洋葱辣到眼睛啦<br>
+    至此，多喜乐，长安宁，岁无忧，久安康                      敬礼<br>
+你的妹妹</p>
+    <p style="font-family: '楷体'; font-size: 30px;"><a href="文字5.html">上一页</a></p>
+<p style="font-family: '楷体'; font-size: 30px;"><a href="文字7.html">下一页</a></p>
+</body>
+	<style>
+    body {
+	background-image: url('气球小熊.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+	<audio id="background-music" controls>
+    <source src="鞠婧祎 - 花.mp3" type="audio/mpeg">
+</audio>
+	<button id="play-button">播放音乐</button>
+    <button id="pause-button">暂停音乐</button>
+	<button id="stop-button">停止音乐</button>
+    <script>
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        // 恢复播放进度
+        const storedTime = localStorage.getItem('musicTime');
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+        }
+
+        playButton.addEventListener('click', () => {
+            music.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            music.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            music.pause();
+            music.currentTime = 0;
+            localStorage.removeItem('musicTime'); // 停止时清除进度
+        });
+
+        music.addEventListener('timeupdate', () => {
+            localStorage.setItem('musicTime', music.currentTime); // 保存当前时间
+        });
+    </script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>第三页</title>
+<style type="text/css">
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+</style>
+</head>
+<body>
+	<style>
+    body {
+	background-image: url('气球小熊.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+    <h1>三</h1>
+    <p style="font-family: '楷体'; font-size: 30px;">21.11.20</p>
+    <p style="font-family: '楷体'; font-size: 30px;">我选择继续逃避，在父母分开的这些天来，我不断的用酒精麻醉自己，但偏偏是越想忘记的，越想用酒精洗去的，反而在这些天更加深刻<br>
+    我的父母争吵不休，我也不合群，每次逢年过节亲戚们大家聚在一起时，我就像一个死小孩一样独自一人在一边，不参与同辈的玩耍，也不会去讨大人们的喜欢<br>
+    我发觉我好像有点厌世，我所向往的爱情在叶芝对茅德冈，艾拉对于司这样的，这个世界太大，可是没有我能认同的<br>
+    ……我永远记得一件事<br>
+    我是哥哥</p>
+    <p style="font-family: '楷体'; font-size: 30px;"><a href="文字2.html">上一页</a></p>
+<p style="font-family: '楷体'; font-size: 30px;"><a href="文字4.html">下一页</a></p>
+</body>
+	<audio id="background-music" controls>
+    <source src="市川淳 - 遠い空へ (飞向遥远的天空).mp3" type="audio/mpeg">
+</audio>
+	<button id="play-button">播放音乐</button>
+    <button id="pause-button">暂停音乐</button>
+	<button id="stop-button">停止音乐</button>
+    <script>
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        // 恢复播放进度
+        const storedTime = localStorage.getItem('musicTime');
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+        }
+
+        playButton.addEventListener('click', () => {
+            music.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            music.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            music.pause();
+            music.currentTime = 0;
+            localStorage.removeItem('musicTime'); // 停止时清除进度
+        });
+
+        music.addEventListener('timeupdate', () => {
+            localStorage.setItem('musicTime', music.currentTime); // 保存当前时间
+        });
+    </script>
+</html>

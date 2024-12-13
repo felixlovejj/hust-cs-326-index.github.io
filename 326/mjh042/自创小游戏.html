@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>躲避陨石小游戏</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        #gameCanvas {
+            display: block;
+        }
+        .score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="score" id="scoreBoard">分数: 0</div>
+    <canvas id="gameCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreBoard = document.getElementById('scoreBoard');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let score = 0;
+        let difficulty = 1;
+        let asteroidFrequency = 0.02;
+        const spaceship = {
+            x: canvas.width / 2 - 20,
+            y: canvas.height - 100,
+            width: 40,
+            height: 40,
+            speed: 5
+        };
+        const asteroids = [];
+        let gameOver = false;
+
+        // 键盘按键状态
+        const keys = {};
+
+        // 加载火箭图片
+        const spaceshipImage = new Image();
+        spaceshipImage.src = '../mjh042/images/rocket.png'; // 请确保路径正确
+
+        function createAsteroid() {
+            return {
+                x: Math.random() * canvas.width,
+                y: -50,
+                size: Math.random() * 30 + 20,
+                speed: Math.random() * 3 + 2 + difficulty * 0.5
+            };
+        }
+
+        function drawSpaceship() {
+            ctx.drawImage(spaceshipImage, spaceship.x, spaceship.y, spaceship.width, spaceship.height);
+        }
+
+        function drawAsteroids() {
+            for (const asteroid of asteroids) {
+                ctx.beginPath();
+                ctx.arc(asteroid.x, asteroid.y, asteroid.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'gray';
+                ctx.fill();
+            }
+        }
+
+        function updateAsteroids() {
+            for (let i = 0; i < asteroids.length; i++) {
+                asteroids[i].y += asteroids[i].speed;
+                if (asteroids[i].y - asteroids[i].size > canvas.height) {
+                    asteroids.splice(i, 1);
+                    score++;
+                    scoreBoard.textContent = `分数: ${score}`;
+                }
+
+                // 检测碰撞
+                if (
+                    asteroids[i].x < spaceship.x + spaceship.width &&
+                    asteroids[i].x + asteroids[i].size > spaceship.x &&
+                    asteroids[i].y < spaceship.y + spaceship.height &&
+                    asteroids[i].y + asteroids[i].size > spaceship.y
+                ) {
+                    gameOver = true;
+                }
+            }
+        }
+
+        function updateSpaceship() {
+            if (keys['ArrowLeft'] && spaceship.x > 0) {
+                spaceship.x -= spaceship.speed;
+            }
+            if (keys['ArrowRight'] && spaceship.x + spaceship.width < canvas.width) {
+                spaceship.x += spaceship.speed;
+            }
+            if (keys['ArrowUp'] && spaceship.y > 0) {
+                spaceship.y -= spaceship.speed;
+            }
+            if (keys['ArrowDown'] && spaceship.y + spaceship.height < canvas.height) {
+                spaceship.y += spaceship.speed;
+            }
+        }
+
+        function gameLoop() {
+            if (gameOver) {
+                ctx.fillStyle = 'red';
+                ctx.font = '48px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('游戏结束！', canvas.width / 2, canvas.height / 2);
+                return;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            updateSpaceship();
+            drawSpaceship();
+            drawAsteroids();
+            updateAsteroids();
+
+            if (Math.random() < asteroidFrequency) {
+                asteroids.push(createAsteroid());
+            }
+
+            if (score % 10 === 0 && score > 0) {
+                difficulty += 0.1;
+                asteroidFrequency += 0.001;
+            }
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        window.addEventListener('keydown', (event) => {
+            keys[event.key] = true;
+        });
+
+        window.addEventListener('keyup', (event) => {
+            keys[event.key] = false;
+        });
+
+        spaceshipImage.onload = gameLoop;
+    </script>
+</body>
+</html>

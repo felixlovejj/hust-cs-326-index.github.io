@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>第一页</title>
+<style type="text/css">
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+</style>
+</head>
+<body>
+	<style>
+    body {
+	background-image: url('气球小熊.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+    <h1>一</h1>
+    <p style="font-family: '楷体'; font-size: 30px;">20.06.29</p>
+    <p style="font-family: '楷体'; font-size: 30px;">1<span style="font-family: '楷体'">6年，我看了《缘之空》，那时我17岁，高二<br>
+    我妹15，初三，她但时学习不太好，我帮她复习，过了一年，她考上了我的高中.<br>
+    然后，开学第一天，她说她爱我，我只当她是妹妹对哥哥的感谢之情，哈哈的说了一句我也爱你，<br>
+    今年我大一，她高三，就要高考了，<br>
+    今天她打了个电话给我，说了一句我爱你，<br>
+    联系到她最近做的一些事，我真的觉得事情好像不太对了，<br>
+    我说，好好加油，就剩十几天了。就把电话挂了，<br>
+    我现在只希望一切都是我的错觉，只是我的胡思乱想...</span></p>
+    <span style="font-family: '楷体'"><span style="font-size: 30px"><a href="文字2.html">下一页</a></span></span>
+</body>
+	<audio id="background-music" controls>
+    <source src="市川淳 - 遠い空へ (飞向遥远的天空).mp3" type="audio/mpeg">
+</audio>
+	<button id="play-button">播放音乐</button>
+    <button id="pause-button">暂停音乐</button>
+	<button id="stop-button">停止音乐</button>
+    <script>
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        // 恢复播放进度
+        const storedTime = localStorage.getItem('musicTime');
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+        }
+
+        playButton.addEventListener('click', () => {
+            music.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            music.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            music.pause();
+            music.currentTime = 0;
+            localStorage.removeItem('musicTime'); // 停止时清除进度
+        });
+
+        music.addEventListener('timeupdate', () => {
+            localStorage.setItem('musicTime', music.currentTime); // 保存当前时间
+        });
+    </script>
+</html>

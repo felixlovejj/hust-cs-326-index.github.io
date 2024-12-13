@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0">
+  <title>我最爱的音乐</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #e0f2f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+  .music-list {
+      width: 80%;
+      margin: 20px auto;
+      list-style-type: none;
+      padding: 0;
+    }
+
+  .music-list li {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  .music-title {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+  .play-button {
+      padding: 5px 10px;
+      background-color: #009688;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+  .music-caption {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <button onclick="window.location.href='../index.html';">首页</button>
+    <button onclick="window.location.href='image.html';">我的相册</button>
+    <button onclick="window.location.href='music.html';">我最喜爱的音乐</button>
+    <button onclick="window.location.href='star.html';">我最爱的明星</button>
+    <button onclick="window.location.href='connect.html';">联系我</button>
+    <button onclick="window.location.href='https://felixlovejj.github.io/hust-cs-326-index.github.io/';">前往寝室主页</button>
+  </nav>
+  <ul class="music-list">
+    <li>
+      <span class="music-title">花之舞</span>
+      <button class="play-button" onclick="playMusic('../music/Flower Dance-DJ Okawari.mp3')">播放</button>
+      <p class="music-caption">这是一首优美的纯音乐，旋律舒缓动听，能让人放松身心。</p>
+    </li>
+    <li>
+      <span class="music-title">My soul</span>
+      <button class="play-button" onclick="playMusic('../music/My soul.mp3')">播放</button>
+      <p class="music-caption">经典钢琴曲的吉他版，节奏轻快灵动，具有很强的感染力。</p>
+    </li>
+    <li>
+      <span class="music-title">未闻花名 口琴版</span>
+      <button class="play-button" onclick="playMusic('../music/未闻花名 口琴版-V.A.mp3')">播放</button>
+      <p class="music-caption">用口琴吹奏出的《未闻花名》主题曲，充满了淡淡的忧伤与怀念。</p>
+    </li>
+    <li>
+      <span class="music-title">三葉のテーマ</span>
+      <button class="play-button" onclick="playMusic('../music/三葉のテーマ-RADWIMPS.mp3')">播放</button>
+      <p class="music-caption">电影《你的名字》中三叶的主题音乐，旋律优美且情感真挚。</p>
+    </li>
+  </ul>
+  <script>
+    var currentAudio = null;
+    function playMusic(musicFile) {
+      if (currentAudio &&!currentAudio.paused) {
+        currentAudio.pause();
+      }
+      var audio = new Audio(musicFile);
+      currentAudio = audio;
+      audio.play();
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0">
+  <title>联系我</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #e0f2f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+.contact-section {
+      width: 80%;
+      margin: 20px auto;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+.contact-title {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+.contact-info {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+.contact-form {
+      margin-top: 20px;
+    }
+
+.form-group {
+      margin-bottom: 15px;
+    }
+
+.form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+.form-group input,
+.form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+.submit-button {
+      background-color: #009688;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <button onclick="window.location.href='../index.html';">首页</button>
+    <button onclick="window.location.href='image.html';">我的相册</button>
+    <button onclick="window.location.href='music.html';">我最喜爱的音乐</button>
+    <button onclick="window.location.href='star.html';">我最爱的明星</button>
+    <button onclick="window.location.href='connect.html';">联系我</button>
+    <button onclick="window.location.href='https://felixlovejj.github.io/hust-cs-326-index.github.io/';">前往寝室主页</button>
+  </nav>
+  <div class="contact-section">
+    <h2 class="contact-title">联系我</h2>
+    <p class="contact-info">如果你想要与我多多交流，可以通过以下方式：</p>
+    <p class="contact-info">邮箱：2206672680@qq.com</p>
+    <p class="contact-info">电话：15670650220</p>
+    <p class="contact-info">qq号码：2206672680</p>
+    <button id="bilibiliButton">前往我的b站首页</button>
+    <p class="contact-info">大家可以为我点点关注哦！</p>
+  </div>
+  <script>
+    document.getElementById('bilibiliButton').addEventListener('click', function () {
+      window.location.href = 'https://space.bilibili.com/220726292?spm_id_from=333.1007.0.0';
+    });
+  </script>
+</body>
+
+</html>

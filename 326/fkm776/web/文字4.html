@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>第四页</title>
+<style type="text/css">
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+a:active {
+	color: #000000;
+	text-decoration: none;
+	font-family: "楷体";
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+<h1>四</h1>
+    <p style="font-family: '楷体'; font-size: 30px;">22.01.01</p>
+    <p style="font-family: '楷体'; font-size: 30px;">对不起，我真的很对不起，我真的过不去，2022要快乐啊，各位，祝愿天底下所有的爱者都有温柔，被爱者都有真诚<br>
+    12点02分，我的生日也是这个数字，我很爱我的爷爷奶奶，我的小名是我奶奶取的，叫做福生，希望我福气自生，祝愿我有多多的福报……对不起，奶奶，我知道很爱很爱您，爷爷，对不起……<br>
+    我不合群，但是您们却把爱更多的给了我……<br>
+    如果有轮回，就让我变成爷爷酒瓶里的麦芽酒醇或者奶奶泡入茶杯里的茶叶嫩尖吧，让我暖爷爷的身和奶奶的胃<br>
+    还有小妹，我知道你所做的一切都是为了救我，但我真的沉得太深了，真的出不来了，身体上的创伤有药可医，但精神该用什么救赎呢，每一位成功战胜抑郁症的患者，都有着只能适用自己的方法，我很抱歉，我没有找到自己的方法<br>
+    小妹，我爱你，哥哥永远保护你<br>
+    那段时间，我就应该结束了的，我妹用这种笨方法让我多在人间停留了一些岁月，真的是……笨死了，我想着至少得让她有个正确的恋爱观才行，但我毕竟还是985的脑筋嘛，她的这小点把戏拖不了我多久啊……害……<br>
+    好了，很抱歉浪费了你们的一些时间看了我的感情宣泄，希望见面时，你们能在麦场或者茶园里遇到我，但是我可不会跟你们打招呼的，不然也许会吓到你们，哈哈<br>
+    再见了<br>
+    最后，祝各位福生无量天尊</p>
+    <p style="font-family: '楷体'; font-size: 30px;"><a href="文字3.html">上一页</a></p>
+<p style="font-family: '楷体'; font-size: 30px;"><a href="文字5.html">下一页</a></p>
+</body>
+	<style>
+    body {
+	background-image: url('气球小熊.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+	<audio id="background-music" controls>
+    <source src="Billie Eilish - Six Feet Under.mp3" type="audio/mpeg">
+</audio>
+	<button id="play-button">播放音乐</button>
+    <button id="pause-button">暂停音乐</button>
+	<button id="stop-button">停止音乐</button>
+    <script>
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        // 恢复播放进度
+        const storedTime = localStorage.getItem('musicTime');
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+        }
+
+        playButton.addEventListener('click', () => {
+            music.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            music.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            music.pause();
+            music.currentTime = 0;
+            localStorage.removeItem('musicTime'); // 停止时清除进度
+        });
+
+        music.addEventListener('timeupdate', () => {
+            localStorage.setItem('musicTime', music.currentTime); // 保存当前时间
+        });
+    </script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0">
+  <title>我的相册</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #e0f2f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+ .album-gallery {
+      width: 80%;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+
+ .album-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+ .caption {
+      text-align: center;
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <button onclick="window.location.href='../index.html';">首页</button>
+    <button onclick="window.location.href='image.html';">我的相册</button>
+    <button onclick="window.location.href='music.html';">我最喜爱的音乐</button>
+    <button onclick="window.location.href='star.html';">我最爱的明星</button>
+    <button onclick="window.location.href='connect.html';">联系我</button>
+    <button onclick="window.location.href='https://felixlovejj.github.io/hust-cs-326-index.github.io/';">前往寝室主页</button>
+  </nav>
+  <div class="album-gallery">
+    <div>
+      <img src="../image/youxiang.png" alt="Album Image 1">
+      <p class="caption">我的qq头像素描画</p>
+    </div>
+    <div>
+      <img src="../image/junxun1.jpg" alt="Album Image 2">
+      <p class="caption">军训的宝贵回忆</p>
+    </div>
+    <div>
+      <img src="../image/school1.jpg" alt="Album Image 3">
+      <p class="caption">漫步于校园</p>
+    </div>
+    <div>
+      <img src="../image/school2.jpg" alt="Album Image 4">
+      <p class="caption">可爱的小生灵</p>
+    </div>
+    <div>
+      <img src="../image/school3.jpg" alt="Album Image 5">
+      <p class="caption">校园风光</p>
+    </div>
+    <div>
+      <img src="../image/school4.jpg" alt="Album Image 6">
+      <p class="caption">充满古意的庭院</p>
+    </div>
+  </div>
+</body>
+
+</html>

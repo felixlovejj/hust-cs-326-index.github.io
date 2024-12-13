@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>第二页</title>
+<style type="text/css">
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+	<style>
+    body {
+	background-image: url('气球小熊.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+    <h1>二</h1>
+    <p style="font-family: '楷体'; font-size: 30px;">21.08.04</p>
+    <p style="font-family: '楷体'; font-size: 30px;">后来她考上了北京电影学院，我也在北京读书，她每天都约我出去玩，但我一直在推脱她，每天都在学校里待着<br>
+    有一次，她给我打电话，很生气的骂了我一顿，说我真的太笨了，说着说着就哭了，其实我也明白，但我知道这种事是不可能的，现实不像动漫，我做不到像悠那样，而且我爸爸妈妈也都在<br>
+    但今年4月，家里出了点事，我爸和我妈分开了，才过了两个月，他们就各自组成了新的家庭了，也没有管我和我妹，毕竟我爸妈从小对我和我妹都冷冰冰的，我想他们本来就不愿意在一起的，根本就不相爱，对对方根本没有感觉，只是爷爷奶奶那辈的意愿，才不得不结婚，而且我和她也成年了，前两天，她发微信和我说：哥，没有什么能阻拦我们的了，所爱隔山海，山海已经平.<br>
+    我也觉得有点迷茫了……</p>
+    <p style="font-family: '楷体'; font-size: 30px;"><a href="文字.html">上一页</a></p>
+	<p style="font-family: '楷体'; font-size: 30px;"><a href="文字3.html">下一页</a></p>
+</body>
+	<audio id="background-music" controls>
+    <source src="市川淳 - 遠い空へ (飞向遥远的天空).mp3" type="audio/mpeg">
+</audio>
+	<button id="play-button">播放音乐</button>
+    <button id="pause-button">暂停音乐</button>
+	<button id="stop-button">停止音乐</button>
+    <script>
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        // 恢复播放进度
+        const storedTime = localStorage.getItem('musicTime');
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+        }
+
+        playButton.addEventListener('click', () => {
+            music.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            music.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            music.pause();
+            music.currentTime = 0;
+            localStorage.removeItem('musicTime'); // 停止时清除进度
+        });
+
+        music.addEventListener('timeupdate', () => {
+            localStorage.setItem('musicTime', music.currentTime); // 保存当前时间
+        });
+    </script>
+</html>

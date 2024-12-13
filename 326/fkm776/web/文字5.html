@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>第五页</title>
+<style type="text/css">
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+    <h1>五</h1>
+    <p style="font-family: '楷体'; font-size: 30px;">22.07.12</p>
+    <p style="font-family: '楷体'; font-size: 30px;">他是我哥哥……今年6月27日离开了我，同时留下了一封遗书，信里说，他很开心来到这个世界，很开心遇见我，他说他谁也不恨，他说他还是觉得父亲和母亲很好，他说他很爱爷爷奶奶，外公外婆，他说也很谢谢你们，特别是有几个在评论区安慰他的人……可我讨厌他，为什么他谁都爱，为什么别人无论怎样对他，他都不会恨，为什么他不会爱自己<br>
+    我也恨我自己，我不应该放松警惕的，1月1号那天他就不对劲，那天晚上我和他都在家，他陪我一起打游戏，弹吉他给我听，把他好兄弟的微信推给我，白天又带我逛了游乐园，进鬼屋吓我……太反常了，这和一直一来生病了的他根本不一样，于是我便留了一个心眼，晚上差不多到时间了，他就和我说元旦快乐，说今天好累，他先去洗澡，睡觉了，他进浴室大概有三分钟，我就发现我的心跳的好快，敲浴室的门喊他，没有反应，我就把门撬开了，他躺在浴缸里，全是血，我却像是早有准备一样，根本不慌张，打120，说位置，找酒精，拿纱布给他止血，等医生来，看着他进急救室，可我真的是傻的，那一段时间，我的大脑是空白的，我所做的这一切，似乎都是下意识的，所幸，我发现的早，他并无大碍，只是醒来后，一直在发呆，直到1月31号，他在那天和我说，他要好好活下去了，笑着和我说的，谁信他啊，我口上说，好啊，要好好活下去，别再给老妹我填麻烦了，心里可是一点也没有放松警惕的，但从那天开始，他又出家门了，主动去找女孩子聊天了，天天说去哪玩，又去哪吃东西的，甚至还会来找我要我闺蜜的联系方式，真的，我觉得我哥真的很帅的，走大街上都有好多女孩子找他的，而且那段时间，他连好久没吃的药也开始吃了，我真的感觉那时候他真的在好起来……他伪装得太像了，或者说是我太傻了，我为什么要放松警惕，我是个混蛋，是个不折不扣的大笨蛋，我不是人，明明他脸上在笑，但眼角的疲倦却是越来越重啊，为什么我看不到，如果我在注意点，如果27号晚上，我们去玩的时候我不喝醉，我怎么会干出这么蠢的事，他把我背回女生寝室门口，打电话让我闺蜜送我上去，说谢谢你咯，我妹有你这样的好闺蜜，我就放心了，然后他就回家了，第二天我打电话，他不接，手机是关机的，我到处找他，所有人都问了，连父亲母亲都问了，他们也是一样的回答，关我什么事……<br>
+    最后我回家了，在他的房间里见到了他，他盖着被子，蜷缩着，就像我七岁那年，九岁的他抱着我说不要怕，哥哥在，那晚的雷声很大，父亲和母亲的吵架声也大，但我就不怕了，也没有哭了，那时候他就抱着我入睡，而现在他也睡着了，永远的睡着了<br>
+    对不起，哥哥，其实我早该发现的，要是我早点发现，是不是就不会这样了<br>
+    我永远恨他们两<br>
+    但我不讨厌你，我骗你的，哥哥，我永远爱你，去了那边就不要喝孟婆汤了，留着记忆，等着我，下辈子让我做姐姐吧<br>
+    你放心啦，我会好好活着的<br>
+    我爱你</p>
+<p style="font-family: '楷体'; font-size: 30px;"><a href="文字4.html">上一页</a></p>
+<p style="font-family: '楷体'; font-size: 30px;"><a href="文字6.html">下一页</a></p>
+</body>
+	<style>
+    body {
+	background-image: url('气球小熊.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+	<audio id="background-music" controls>
+    <source src="Billie Eilish - Six Feet Under.mp3" type="audio/mpeg">
+</audio>
+	<button id="play-button">播放音乐</button>
+    <button id="pause-button">暂停音乐</button>
+	<button id="stop-button">停止音乐</button>
+    <script>
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        // 恢复播放进度
+        const storedTime = localStorage.getItem('musicTime');
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+        }
+
+        playButton.addEventListener('click', () => {
+            music.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            music.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            music.pause();
+            music.currentTime = 0;
+            localStorage.removeItem('musicTime'); // 停止时清除进度
+        });
+
+        music.addEventListener('timeupdate', () => {
+            localStorage.setItem('musicTime', music.currentTime); // 保存当前时间
+        });
+    </script>
+</html>

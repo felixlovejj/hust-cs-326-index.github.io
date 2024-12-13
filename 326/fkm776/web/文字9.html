@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>第九页</title>
+<style type="text/css">
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+</style>
+</head>
+
+<body>
+    <h1>九</h1>
+    <p style="font-family: '楷体'">23.07.31</p>
+    <p style="font-family: '楷体'">不好意思大家，我没想到这个事情突然就火了，希望没有对大家造成什么影响，大家也不必当真，当个故事看看就好了，毕竟人生就是各种各样的故事，所以说不必在意</p>
+    <p style="font-family: '楷体'">大家如果有意可以去知乎看看<br>
+      <span style="font-family: '楷体';">传送门:answer/2938197652</span><br>
+    这是我写的一个回答，里面或许能解答一些人的问题，关于此事，我不想再说太多<br>
+    我哥哥生前无愧于任何人，他没有招惹过谁，也没有伤害过谁，我不想他在离开还被一些人用恶意揣测，或者大家当个故事就好，真的不想再解释太多了，我没有圣贤的心态，于芸芸众生而言，我就是个普通人，我哥哥不应该受到这些恶意，他真的很好<br>
+    kg 的，dy 的，ks 的，b 站的所有相关言论我都 有认真的一条条的看完，谢谢所有祝福鼓励我的人，也讨厌所有辱骂伤害我的人<br>
+    我没有联系相关博主删作品，是因为我恨我的父母，同时在心里也希望他们会有一天看到这些评论，看到他们的儿子究竟承受过怎么样的压力<br>
+    算了，我哥在他们看来估计就是一个戏子<br>
+    言尽于此吧，我也很累了</p>
+<p style="font-family: '楷体'"><a href="文字8.html">上一页</a></p>
+<p style="font-family: '楷体'"><a href="简介页面.html">返回简介</a></p>
+<p style="font-family: '楷体'"><a href="page2.html"></a>（内容均为真实事件）</p>
+</body>
+	<style>
+    body {
+	background-image: url('气球小熊.jpg');
+	background-size: cover; /* 根据需要调整 */
+	background-repeat: no-repeat; /* 防止重复 */
+	font-size: 30px;
+    }
+    </style>
+<audio id="background-music" controls>
+    <source src="鞠婧祎 - 花.mp3" type="audio/mpeg">
+</audio>
+	<button id="play-button">播放音乐</button>
+    <button id="pause-button">暂停音乐</button>
+	<button id="stop-button">停止音乐</button>
+    <script>
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+        const stopButton = document.getElementById('stop-button');
+
+        // 恢复播放进度
+        const storedTime = localStorage.getItem('musicTime');
+        if (storedTime) {
+            music.currentTime = parseFloat(storedTime);
+        }
+
+        playButton.addEventListener('click', () => {
+            music.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            music.pause();
+        });
+
+        stopButton.addEventListener('click', () => {
+            music.pause();
+            music.currentTime = 0;
+            localStorage.removeItem('musicTime'); // 停止时清除进度
+        });
+
+        music.addEventListener('timeupdate', () => {
+            localStorage.setItem('musicTime', music.currentTime); // 保存当前时间
+        });
+    </script>
+</html>

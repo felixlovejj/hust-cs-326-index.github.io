@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的相册</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            color: #000000;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 增大图片容器最小宽度 */
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px; /* 宽度增加支持大图 */
+            margin: auto;
+        }
+        .photo-card {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+        .photo-card:hover {
+            transform: scale(1.05);
+        }
+        .photo-card img {
+            width: 100%;
+            height: auto; /* 保持比例缩放 */
+            display: block;
+        }
+        .photo-card .description {
+            padding: 15px;
+        }
+        .photo-card .description h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        .photo-card .description p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>我的相册</h1>
+    <p class="description" style="font-family: Arial, sans-serif; font-style: oblique; font-weight: normal; color: #FFFFFF;">A collection of moments </p>
+</header>
+
+<div class="gallery">
+    <!-- Photo Card 1 -->
+    <div class="photo-card">
+        <img src="images/微信图片_20241117113124.jpg" alt="Photo 1">
+        <div class="description">
+            <h2>美国小镇</h2>
+        </div>
+    </div>
+
+    <!-- Photo Card 2 -->
+    <div class="photo-card">
+        <img src="images/微信图片_20241115204055.jpg" alt="Photo 2">
+        <div class="description">
+            <h2>美国日落</h2>
+        </div>
+    </div>
+
+    <!-- Repeat similar structure for other photos -->
+    <div class="photo-card">
+        <img src="images/微信图片_20241115203944.jpg" alt="Photo 3">
+        <div class="description">
+            <h2>武汉日落</h2>
+        </div>
+    </div>
+	    <div class="photo-card">
+        <img src="images/微信图片_20241115203941.jpg" alt="Photo 3">
+        <div class="description">
+            <h2>武汉日出</h2>
+        </div>
+    </div>
+
+    <!-- Photo Card 10 -->
+    <div class="photo-card">
+        <img src="images/微信图片_20241115204004.jpg" alt="Photo 10">
+        <div class="description">
+            <h2>美国乡村</h2>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024-2025 BY MaJunHao| 我的相册</p>
+</footer>
+
+</body>
+</html>
+
